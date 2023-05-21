@@ -1,0 +1,103 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.container {
+    margin: 1rem;
+    
+}
+
+.site-title {
+    font-size: 2rem;
+}
+
+.header {
+    background-color: rgb(240, 240, 240);
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 2rem;
+    padding: 0 1rem;
+
+}
+
+.header ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.header a {
+    color: inherit;
+    text-decoration: none;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: .25rem;
+}
+
+.header li.active {
+    background-color: rgb(96, 96, 96);
+}
+
+.header li:hover {
+    background-color: #777;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    background-color: #333;
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.leaderboard {
+    background-color: #777;
+    
+}
+
+table {
+    width: 100%
+}
+
+.leaderboard-boxes {
+    display: flex;
+    background-color: #d53a3a;
+
+}
+
+.leaderboard-title {
+    padding-top: 1rem
+}
+
+.playersbox {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 4rem;
+}
+
+.scrollable-div {
+    border: 1px solid black;
+    max-height: 200px; /* set a maximum height for the div */
+    overflow: auto; /* enable scrolling when the content overflows the container */
+    padding: 10px; /* add some padding for better readability */
+  }
+
+  /* .show-player-matches {
+    max-height: 50px;
+    overflow: auto;
+  } */
