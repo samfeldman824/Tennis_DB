@@ -196,7 +196,6 @@ def add_match(winner, loser, sets, score, advanced_stats_dict={}):
 
         # if advanced_stats were given, create variables for each stat
         if bool(advanced_stats_dict):
-            print('yes')
             player = advanced_stats_dict['Player']
             first_serves_in = int(advanced_stats_dict['1st Serves In'])
             first_serves_hit = int(advanced_stats_dict['1st Serves Hit'])
@@ -344,10 +343,12 @@ def add_match(winner, loser, sets, score, advanced_stats_dict={}):
             {"Name": {"$regex": f"^{loser}$", "$options": "i"}},
             {"$push": {"Match List": match_id}})
 
-        db.player_stats.update_one(
-            {"Name": {"$regex": f"^{player}$", "$options": "i"}},
-            {"$push": {"Advanced Stats.Included Match List": match_id}}
-        )
+
+        if bool(advanced_stats_dict):
+            db.player_stats.update_one(
+                {"Name": {"$regex": f"^{player}$", "$options": "i"}},
+                {"$push": {"Advanced Stats.Included Match List": match_id}}
+            )
         
         return Response(
             response= json.dumps(
@@ -358,8 +359,7 @@ def add_match(winner, loser, sets, score, advanced_stats_dict={}):
             mimetype="application/json"
         )
     except Exception as ex:
-        print(ex)
-        print('fuck')
+        print("Error", ex)
         return Response(
             response= json.dumps(
             {"message": "match not added"}),
@@ -459,12 +459,16 @@ def add_match_from_uploaded_csv():
     new_match = data[0]
 
     winner = new_match['Winner']
+    del new_match['Winner']
     # print(winner)
     loser = new_match['Loser']
+    del new_match['Loser']
     # print(loser)
     n_sets = new_match['Number of Sets']
+    del new_match['Number of Sets']
     # print(n_sets)
     score = new_match['Score']
+    del new_match['Score']
     # print(score)
     
 
