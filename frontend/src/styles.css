@@ -75,11 +75,16 @@ table {
 
 .leaderboard-body {
     display: flex;
+    justify-content: space-evenly;
 
 }
 
 .leaderboard-title {
     padding-top: 1rem
+}
+
+.leaderboard-box {
+    outline: 1px solid black;
 }
 
 .playersbox {

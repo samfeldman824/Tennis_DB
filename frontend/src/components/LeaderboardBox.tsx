@@ -37,7 +37,7 @@ export default function LeaderboardBox({title, apiUrl}: LeaderboardBoxProps) {
     
     
     return (
-        <div>
+        <div className="leaderboard-box">
             <p>{title}</p>
             {data && data.map((item, index) => (
                     <div key={index} style={{display: "flex", gap: "1rem"}}>
