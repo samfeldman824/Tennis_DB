@@ -38,15 +38,30 @@ export default function LeaderboardBox({title, apiUrl}: LeaderboardBoxProps) {
     
     return (
         <div className="leaderboard-box">
-            <p>{title}</p>
-            {data && data.map((item, index) => (
-                    <div key={index} style={{display: "flex", gap: "1rem"}}>
-                         <p>{Object.values(item)[0]}</p>
-                        <p>{Object.values(item)[1]}</p>
-                    </div>
-                ))
+            <div style={{background: "blue"}}>
+                <p>{title}</p>
+            </div>
 
-                }
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Name</th>
+                        <th>{title}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {data.map((item, index) => (
+                <tr key={index}>
+                    <td>{index + 1}</td>
+                    <td>{Object.values(item)[0]}</td>
+                    <td>{Object.values(item)[1]}</td> 
+                </tr>
+                ))}
+          
+                </tbody>
+            </table>
         </div>
         
     )
