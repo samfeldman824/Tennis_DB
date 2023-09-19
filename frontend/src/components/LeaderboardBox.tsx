@@ -44,15 +44,7 @@ export default function LeaderboardBox() {
 
                 }
         </div>
-        // <div>
-        //     <table>
-        //         <thead>
-        //             <tr>
-        //                 <th>Wins</th>
-        //             </tr>
-        //         </thead>
-        //     </table>
-        // </div>
+        
     )
 
 }
