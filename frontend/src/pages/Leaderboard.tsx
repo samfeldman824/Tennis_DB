@@ -19,8 +19,6 @@ export default function Leaderboard() {
             <div className="leaderboard-body">
                 <LeaderboardBox />
             </div>
-            
-            
         </div>
     )
 }
