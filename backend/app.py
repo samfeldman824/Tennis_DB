@@ -24,6 +24,8 @@ app.route("/", methods=["GET"])(original)
 app.route("/players", methods=["GET"])(get_all_players)
 app.route("/players/matches/<name>", methods=["GET"])(get_all_player_matches)
 app.route("/players/stats/wins", methods=["GET"])(get_player_win_totals)
+app.route("/players/stats/sets", methods=["GET"])(get_player_set_totals)
+app.route("/players/stats/fspw", methods=["GET"])(get_player_fspw)
 
 
 app.route("/players/create_player/<name>", methods=["POST"])(create_player)

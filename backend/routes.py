@@ -104,6 +104,56 @@ def get_player_win_totals():
             mimetype="application/json"
         )
 
+# function to get all players wins
+def get_player_set_totals():
+    try:
+        
+        data = list(db.player_stats.find({}, {'_id': 0, 'Name': 1, 'Sets Won': 1}).sort("Sets Won", -1)) # list players sets won in a sorted list
+        
+        return Response(
+            response= json.dumps({"message": "Players found", "data": data}),
+            status=200,
+            mimetype="application/json"
+        )
+    except Exception as ex:
+        print(ex)
+        return Response(
+            response= json.dumps({"message": "cannot read sets won totals"}),
+            status=500,
+            mimetype="application/json"
+        )
+    
+
+# function to get all players wins
+def get_player_fspw():
+    try:
+        
+        data = list(db.player_stats.find({}, {'_id': 0, 'Name': 1, 'Advanced Stats.1st Serves In': 1, 'Advanced Stats.1st Serve Points Won': 1}))
+       
+        for entry in data:
+            fsi = entry['Advanced Stats']['1st Serves In']
+            fspw = entry['Advanced Stats']['1st Serve Points Won']
+            entry['1st Serve Points Won %'] = round((fspw / fsi) * 100, 2)
+            del entry['Advanced Stats']
+
+        
+        
+        return Response(
+            response= json.dumps({"message": "Players found", "data": data}),
+            status=200,
+            mimetype="application/json"
+        )
+    except Exception as ex:
+        print(ex)
+        return Response(
+            response= json.dumps({"message": "cannot read sets won totals"}),
+            status=500,
+            mimetype="application/json"
+        )
+
+
+
+
 # function to add player to db
 def create_player(name):
     # creating dictionary to represent new player
