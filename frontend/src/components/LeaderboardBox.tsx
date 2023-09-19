@@ -38,7 +38,7 @@ export default function LeaderboardBox({title, apiUrl}: LeaderboardBoxProps) {
     
     return (
         <div className="leaderboard-box">
-            <div style={{background: "blue"}}>
+            <div className="leaderboard-box-title">
                 <p>{title}</p>
             </div>
 

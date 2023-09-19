@@ -87,6 +87,10 @@ table {
     outline: 1px solid black;
 }
 
+.leaderboard-box-title {
+    background-color: white;
+}
+
 .playersbox {
     display: flex;
     justify-content: center;
