@@ -73,9 +73,8 @@ table {
     width: 100%
 }
 
-.leaderboard-boxes {
+.leaderboard-body {
     display: flex;
-    background-color: #d53a3a;
 
 }
 

@@ -16,10 +16,8 @@ export default function Leaderboard() {
         
         <div className="leaderboard"> 
             <h2 className="leaderboard-title">Leaderboard</h2>
-            <div className="leaderboard-boxes">
+            <div className="leaderboard-body">
                 <LeaderboardBox />
-                {/* <LeaderboardBox />
-                <LeaderboardBox /> */}
             </div>
             
             
