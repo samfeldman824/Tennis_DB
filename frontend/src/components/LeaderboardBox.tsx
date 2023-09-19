@@ -7,11 +7,15 @@ interface LeaderboardData {
     Wins: number;
 }
 
+interface LeaderboardBoxProps {
+    title: string;
+    apiUrl: string
+}
 
 
 
 
-export default function LeaderboardBox() {
+export default function LeaderboardBox({title, apiUrl}: LeaderboardBoxProps) {
     
     const [data, setData] = useState<LeaderboardData[]>([])
 
@@ -19,7 +23,7 @@ export default function LeaderboardBox() {
     useEffect(() => {
 
         const getData = async () => {
-        const url = 'http://localhost:8080/players/stats/wins'
+        const url = 'http://localhost:8080/' + apiUrl
         const data = await fetch(url)
         const json = await data.json()
         console.log(json.data)
@@ -34,11 +38,11 @@ export default function LeaderboardBox() {
     
     return (
         <div>
-            <p>Wins</p>
+            <p>{title}</p>
             {data && data.map((item, index) => (
                     <div key={index} style={{display: "flex", gap: "1rem"}}>
-                        <div>{item.Name}</div>
-                        <div>{item.Wins}</div>
+                         <p>{Object.values(item)[0]}</p>
+                        <p>{Object.values(item)[1]}</p>
                     </div>
                 ))
 

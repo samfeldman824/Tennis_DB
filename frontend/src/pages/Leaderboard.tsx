@@ -17,7 +17,7 @@ export default function Leaderboard() {
         <div className="leaderboard"> 
             <h2 className="leaderboard-title">Leaderboard</h2>
             <div className="leaderboard-body">
-                <LeaderboardBox />
+                <LeaderboardBox title="Wins" apiUrl="players/stats/wins" />
             </div>
         </div>
     )
