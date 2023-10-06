@@ -46,3 +46,4 @@ app.route("/matches/deleteall", methods=["DELETE"])(delete_matches)
 
 if __name__ == "__main__":
     app.run(port=8080, debug=True)
+    # flask run -p 8080 --reload
