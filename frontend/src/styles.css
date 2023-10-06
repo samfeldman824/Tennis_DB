@@ -5,6 +5,8 @@
 
 body {
     margin: 0;
+    padding: 0;
+    height: 100%;
 }
 
 .container {
@@ -64,31 +66,52 @@ body {
     right: 0;
 }
 
-.leaderboard {
-    background-color: #777;
-    
-}
-
 table {
     width: 100%
 }
 
-.leaderboard-body {
+
+.leaderboard-container {
+    background-color: #fff;
     display: flex;
-    justify-content: space-evenly;
-
-}
-
-.leaderboard-title {
-    padding-top: 1rem
+    flex-wrap: wrap; /* Allow flex items to wrap to the next line */
+    justify-content: space-between; /* Distribute items evenly with space between them */
 }
 
 .leaderboard-box {
-    outline: 1px solid black;
+    
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    width: calc(33.33% - 20px);
+    margin-bottom: 20px;
 }
 
-.leaderboard-box-title {
-    background-color: white;
+.leaderboard-box table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px; /* Add spacing between the title and the table */
+}
+
+.leaderboard-box table th,
+.leaderboard-box table td {
+    padding: 8px;
+    text-align: left;
+}
+
+.leaderboard-box table th {
+    background-color: #007BFF;
+    color: #fff;
+    font-weight: bold;
+}
+
+.leaderboard-box table td {
+    font-size: 18px;
+}
+
+.leaderboard-box table td:first-child {
+    width: 40px; /* Adjust the width for the "No." column */
 }
 
 .playersbox {

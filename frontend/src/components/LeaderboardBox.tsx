@@ -38,11 +38,10 @@ export default function LeaderboardBox({title, apiUrl}: LeaderboardBoxProps) {
     
     return (
         <div className="leaderboard-box">
-            <div className="leaderboard-box-title">
+            <div>
                 <p>{title}</p>
             </div>
-
-
+    
             <table>
                 <thead>
                     <tr>
@@ -52,18 +51,16 @@ export default function LeaderboardBox({title, apiUrl}: LeaderboardBoxProps) {
                     </tr>
                 </thead>
                 <tbody>
-                {data.map((item, index) => (
-                <tr key={index}>
-                    <td>{index + 1}</td>
-                    <td>{Object.values(item)[0]}</td>
-                    <td>{Object.values(item)[1]}</td> 
-                </tr>
-                ))}
-          
+                    {data.map((item, index) => (
+                        <tr key={index}>
+                            <td>{index + 1}</td>
+                            <td>{Object.values(item)[0]}</td>
+                            <td>{Object.values(item)[1]}</td>
+                        </tr>
+                    ))}
                 </tbody>
             </table>
         </div>
-        
     )
 
 }
